@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-primary: #FF1A00;
+  --color-brand-hover: #CC1500;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #0D0D0D;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Offset anchor links to account for fixed header */
+[id] {
+  scroll-margin-top: 72px;
+}

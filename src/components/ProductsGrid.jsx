@@ -117,10 +117,13 @@ export default function ProductsGrid() {
             const Icon = product.icon
             const href = WA_BASE + encodeURIComponent(product.msg)
             return (
-              <motion.div
+              <motion.a
                 key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={cardVariant}
-                className="border border-neutral-200 rounded-card p-6 flex flex-col gap-4 hover:border-brand-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-150 group"
+                className="border border-neutral-200 rounded-card p-6 flex flex-col gap-4 hover:border-brand-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-150 group cursor-pointer"
               >
                 <div className="w-10 h-10 bg-neutral-100 group-hover:bg-brand-primary/10 rounded-lg flex items-center justify-center transition-colors duration-150">
                   <Icon size={19} className="text-neutral-600 group-hover:text-brand-primary transition-colors duration-150" />
@@ -129,16 +132,11 @@ export default function ProductsGrid() {
                   <h3 className="font-display font-bold text-lg text-neutral-900 uppercase mb-1.5">{product.name}</h3>
                   <p className="font-body text-neutral-500 text-sm leading-relaxed">{product.desc}</p>
                 </div>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-brand-primary hover:text-brand-hover font-body font-medium text-sm transition-colors duration-150"
-                >
+                <span className="inline-flex items-center gap-1.5 text-brand-primary group-hover:text-brand-hover font-body font-medium text-sm transition-colors duration-150">
                   <MessageCircle size={14} />
                   Pedir cotação
-                </a>
-              </motion.div>
+                </span>
+              </motion.a>
             )
           })}
         </motion.div>

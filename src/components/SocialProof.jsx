@@ -45,7 +45,7 @@ export default function SocialProof() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="font-display font-extrabold text-4xl sm:text-5xl text-brand-primary leading-none mb-1">
+              <p className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-brand-primary leading-none mb-1">
                 <Counter prefix={stat.prefix} target={stat.target} suffix={stat.suffix} />
               </p>
               <p className="font-body font-semibold text-neutral-800 text-xs sm:text-sm uppercase tracking-wide">{stat.label}</p>

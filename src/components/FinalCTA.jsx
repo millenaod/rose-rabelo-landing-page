@@ -17,14 +17,14 @@ export default function FinalCTA() {
         <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-neutral-900 uppercase leading-[0.95] mb-5">
           Sua segurança<br />começa com<br />uma mensagem.
         </h2>
-        <p className="font-body text-neutral-500 text-lg mb-8 max-w-sm mx-auto leading-relaxed">
+        <p className="font-body text-neutral-500 text-base sm:text-lg mb-8 max-w-xs sm:max-w-sm mx-auto leading-relaxed">
           Fale agora com a Rose Rabelo Seguros e receba uma cotação sem compromisso, feita para a sua realidade.
         </p>
         <a
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-brand-primary hover:bg-brand-hover text-white font-body font-semibold text-lg px-8 py-4 rounded transition-colors duration-150 shadow-lg"
+          className="inline-flex items-center gap-2.5 bg-brand-primary hover:bg-brand-hover text-white font-body font-semibold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded transition-colors duration-150 shadow-lg"
         >
           <MessageCircle size={21} />
           Falar agora no WhatsApp

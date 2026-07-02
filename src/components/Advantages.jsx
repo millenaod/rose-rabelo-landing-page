@@ -34,7 +34,7 @@ export default function Advantages() {
             const Icon = adv.icon
             return (
               <FadeUp key={i} delay={i * 0.1}>
-                <div className="border border-neutral-700 rounded-card p-8 text-center hover:border-brand-primary/40 transition-colors duration-200 h-full">
+                <div className="border border-neutral-700 rounded-card p-6 sm:p-8 text-center hover:border-brand-primary/40 transition-colors duration-200 h-full">
                   <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
                     <Icon size={22} className="text-brand-primary" />
                   </div>

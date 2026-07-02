@@ -36,7 +36,7 @@ export default function HowItWorks() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {steps.map((step, i) => (
             <FadeUp key={i} delay={i * 0.09}>
-              <p className="font-display font-extrabold text-7xl text-brand-primary/20 leading-none mb-3 select-none">{step.num}</p>
+              <p className="font-display font-extrabold text-5xl sm:text-7xl text-brand-primary/20 leading-none mb-3 select-none">{step.num}</p>
               <h3 className="font-display font-bold text-xl text-neutral-900 uppercase mb-2">{step.title}</h3>
               <p className="font-body text-neutral-500 text-sm leading-relaxed">{step.desc}</p>
             </FadeUp>

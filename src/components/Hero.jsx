@@ -5,7 +5,7 @@ const WA_LINK = "https://wa.me/553733332222?text=Ol%C3%A1!%20Gostaria%20de%20faz
 
 export default function Hero() {
   return (
-    <section className="relative bg-neutral-900 text-white pt-28 pb-24 overflow-hidden">
+    <section className="relative bg-neutral-900 text-white pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-brand-primary/8 to-transparent" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-primary/5 rounded-full" />
@@ -29,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-            className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[0.92] mb-6 uppercase"
+            className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[0.92] mb-6 uppercase"
           >
             Sua vida muito<br />
             <span className="text-brand-primary">mais tranquila</span><br />
@@ -40,7 +40,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 }}
-            className="font-body text-neutral-400 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed"
+            className="font-body text-neutral-400 text-base sm:text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
           >
             A Rose Rabelo Seguros cuida de tudo para você ter a cobertura certa, na hora certa, sem complicação.
           </motion.p>

@@ -6,6 +6,7 @@ import TurningPoint from './components/TurningPoint'
 import ProductsGrid from './components/ProductsGrid'
 import Advantages from './components/Advantages'
 import HowItWorks from './components/HowItWorks'
+import Testimonials from './components/Testimonials'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 
@@ -21,6 +22,7 @@ export default function App() {
         <ProductsGrid />
         <Advantages />
         <HowItWorks />
+        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />

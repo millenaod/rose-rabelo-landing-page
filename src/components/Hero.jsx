@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { MessageCircle, ChevronDown } from 'lucide-react'
 
 const WA_LINK = "https://wa.me/553733332222?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20cota%C3%A7%C3%A3o%20de%20seguro%20com%20a%20Rose%20Rabelo%20Seguros."
@@ -14,39 +15,59 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-4">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-brand-primary/15 border border-brand-primary/30 rounded-full px-3.5 py-1.5 mb-7">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="inline-flex items-center gap-2 bg-brand-primary/15 border border-brand-primary/30 rounded-full px-3.5 py-1.5 mb-7"
+          >
             <span className="w-2 h-2 bg-brand-primary rounded-full" />
             <span className="text-brand-primary font-body text-xs font-medium">+19 anos protegendo famílias e empresas</span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[0.92] mb-6 uppercase">
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+            className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[0.92] mb-6 uppercase"
+          >
             Sua vida muito<br />
             <span className="text-brand-primary">mais tranquila</span><br />
             e segura.
-          </h1>
+          </motion.h1>
 
-          <p className="font-body text-neutral-400 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 }}
+            className="font-body text-neutral-400 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed"
+          >
             A Rose Rabelo Seguros cuida de tudo para você ter a cobertura certa, na hora certa, sem complicação.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+            className="flex flex-wrap gap-3"
+          >
             <a
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-brand-primary hover:bg-brand-hover text-white font-body font-semibold text-base px-6 py-3.5 rounded transition-colors"
+              className="inline-flex items-center gap-2.5 bg-brand-primary hover:bg-brand-hover text-white font-body font-semibold text-base px-6 py-3.5 rounded transition-colors duration-150"
             >
               <MessageCircle size={18} />
               Quero minha cotação
             </a>
             <a
               href="#produtos"
-              className="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 text-neutral-300 hover:text-white font-body font-medium text-base px-6 py-3.5 rounded transition-colors"
+              className="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 text-neutral-300 hover:text-white font-body font-medium text-base px-6 py-3.5 rounded transition-colors duration-150"
             >
               Ver produtos
               <ChevronDown size={16} />
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

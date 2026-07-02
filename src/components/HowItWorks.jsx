@@ -1,3 +1,5 @@
+import FadeUp from './FadeUp'
+
 const steps = [
   {
     num: '01',
@@ -25,19 +27,19 @@ export default function HowItWorks() {
   return (
     <section className="bg-neutral-100 py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-12 text-center">
+        <FadeUp className="mb-12 text-center">
           <p className="text-brand-primary font-body font-medium text-xs uppercase tracking-widest mb-2">Simples assim</p>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-neutral-900 uppercase">
             Como funciona o atendimento
           </h2>
-        </div>
+        </FadeUp>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {steps.map((step, i) => (
-            <div key={i}>
+            <FadeUp key={i} delay={i * 0.09}>
               <p className="font-display font-extrabold text-7xl text-brand-primary/20 leading-none mb-3 select-none">{step.num}</p>
               <h3 className="font-display font-bold text-xl text-neutral-900 uppercase mb-2">{step.title}</h3>
               <p className="font-body text-neutral-500 text-sm leading-relaxed">{step.desc}</p>
-            </div>
+            </FadeUp>
           ))}
         </div>
       </div>

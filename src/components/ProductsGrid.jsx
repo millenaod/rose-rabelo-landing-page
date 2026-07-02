@@ -1,8 +1,10 @@
+import { motion } from 'framer-motion'
 import {
   Car, Truck, Gauge, Bike, Heart, Home,
   Building2, Scale, Plane, UserCheck, Smartphone, Users,
   MessageCircle,
 } from 'lucide-react'
+import FadeUp from './FadeUp'
 
 const WA_BASE = "https://wa.me/553733332222?text="
 
@@ -81,27 +83,47 @@ const products = [
   },
 ]
 
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.06 },
+  },
+}
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+}
+
 export default function ProductsGrid() {
   return (
     <section className="bg-white py-16 md:py-24" id="produtos">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-12 text-center">
+        <FadeUp className="mb-12 text-center">
           <p className="text-brand-primary font-body font-medium text-xs uppercase tracking-widest mb-2">Nossas soluções</p>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-neutral-900 uppercase">
             O que a gente oferece
           </h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        </FadeUp>
+
+        <motion.div
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {products.map((product, i) => {
             const Icon = product.icon
             const href = WA_BASE + encodeURIComponent(product.msg)
             return (
-              <div
+              <motion.div
                 key={i}
-                className="border border-neutral-200 rounded-card p-6 flex flex-col gap-4 hover:border-brand-primary/40 hover:shadow-md transition-all group"
+                variants={cardVariant}
+                className="border border-neutral-200 rounded-card p-6 flex flex-col gap-4 hover:border-brand-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-150 group"
               >
-                <div className="w-10 h-10 bg-neutral-100 group-hover:bg-brand-primary/10 rounded-lg flex items-center justify-center transition-colors">
-                  <Icon size={19} className="text-neutral-600 group-hover:text-brand-primary transition-colors" />
+                <div className="w-10 h-10 bg-neutral-100 group-hover:bg-brand-primary/10 rounded-lg flex items-center justify-center transition-colors duration-150">
+                  <Icon size={19} className="text-neutral-600 group-hover:text-brand-primary transition-colors duration-150" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display font-bold text-lg text-neutral-900 uppercase mb-1.5">{product.name}</h3>
@@ -111,15 +133,15 @@ export default function ProductsGrid() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-brand-primary hover:text-brand-hover font-body font-medium text-sm transition-colors"
+                  className="inline-flex items-center gap-1.5 text-brand-primary hover:text-brand-hover font-body font-medium text-sm transition-colors duration-150"
                 >
                   <MessageCircle size={14} />
                   Pedir cotação
                 </a>
-              </div>
+              </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
